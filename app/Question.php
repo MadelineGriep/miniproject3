@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-        public function user()
+    protected $fillable = ['body'];
+    
+    public function user()
     {
         return $this->belongsTo('App\User');
     }
     
-        public function answers()
+    public function answers()
     {
         return $this->hasMany('App\Answer');
     }
